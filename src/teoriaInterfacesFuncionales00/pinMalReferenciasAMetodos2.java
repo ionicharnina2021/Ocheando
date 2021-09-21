@@ -1,11 +1,10 @@
-package ejercicioLambda01;
+package ejericioreferencias02;
 
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class Ejemplo05Inicial extends JFrame {
+public class pinMalReferenciasAMetodos2 extends JFrame {
 	/*
 	 * Esta es la forma mas sencilla, incomoda e ineficaz de hacer algo asi
 	 */
@@ -30,7 +29,7 @@ public class Ejemplo05Inicial extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ejemplo05Inicial frame = new Ejemplo05Inicial();
+					pinMalReferenciasAMetodos2 frame = new pinMalReferenciasAMetodos2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +45,7 @@ public class Ejemplo05Inicial extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ejemplo05Inicial() {
+	public pinMalReferenciasAMetodos2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 458, 393);
 		contentPane = new JPanel();
@@ -64,34 +63,31 @@ public class Ejemplo05Inicial extends JFrame {
 		JLabel lblPin = new JLabel(" ");
 		lblPin.setBounds(29, 109, 46, 14);
 		contentPane.add(lblPin);
-
-		Dimension dimension = new Dimension(60, 60);
-		Position position = new Position();
-		for (int i = 1; i < 10; i++) {
-			insertarBoton(String.valueOf(i), new Rectangle(position.getPoint(coordinate), dimension));
+		JPanel panel = new JPanel();
+		panel.setBounds(184, 30, 216, 244);
+		contentPane.add(panel);
+		panel.setLayout(new GridLayout(4, 3, 0, 0));
+		int cantidad = 10;
+		for (int i = 1; i < cantidad; i++) {
+			addButton(panel, i);
 		}
-		// TODO
-		insertarBoton("0", null);
+		panel.add(new JLabel());
+		int local = 0;
+		addButton(panel, 0);
 
-		
+	}
 
-		JButton btnNewButton_4_1 = new JButton("0");
-		btnNewButton_4_1.addActionListener(new ActionListener() {
+	private void addButton(JPanel panel, int i) {
+		int local = i;
+		JButton btnNewButton = new JButton(String.valueOf(local));
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				hazAlgo(0);
+				hazAlgo(i);
+				
 			}
 		});
-		btnNewButton_4_1.setBounds(247, 238, 60, 60);
-		contentPane.add(btnNewButton_4_1);
+		
 	}
-
-	private void insertarBoton(String order, Rectangle rectangle) {
-		JButton btnNewButton = new JButton(order);
-		btnNewButton.addActionListener(e -> {
-			hazAlgo(Integer.valueOf(order));
-		});
-		btnNewButton.setBounds(rectangle);
-		contentPane.add(btnNewButton);
-	}
-
 }

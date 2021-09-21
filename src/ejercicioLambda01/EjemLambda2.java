@@ -2,7 +2,8 @@ package ejercicioLambda01;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionListener;import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -55,15 +56,18 @@ public class EjemLambda2 extends JFrame {
 		
 		JButton btnSaluda = new JButton("saluda");
 	
-		btnSaluda.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				lblSaluda.setText("Hola "+textField.getText());
-				System.out.println(e.getSource().getClass());
-			}
+//		btnSaluda.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				lblSaluda.setText("Hola "+textField.getText());
+//				System.out.println(e.getSource().getClass());
+//			}
+//		});
+		btnSaluda.addActionListener(e->{
+			lblSaluda.setText("Hola "+textField.getText());
+			System.out.println(e.getSource().getClass());
 		});
-				
 				
 		btnSaluda.setBounds(228, 219, 115, 29);
 		contentPane.add(btnSaluda);
