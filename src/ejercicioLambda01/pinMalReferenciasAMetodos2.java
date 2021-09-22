@@ -1,4 +1,4 @@
-package ejericioreferencias02;
+package ejercicioLambda01;
 
 import java.awt.Color;
 import java.awt.Component;
