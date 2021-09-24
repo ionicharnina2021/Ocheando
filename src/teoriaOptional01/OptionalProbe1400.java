@@ -48,10 +48,14 @@ public class OptionalProbe1400 {
 		// 03 En este caso no trabajamos con palabras, lo hacemos con un optional
 		 palabras=new ArrayList<>();
 		 palabras.add("hola");
-		Optional<ArrayList> optional = Optional.ofNullable(palabras);
+		 ArrayList<String>palabrass=new ArrayList<>();
+		 palabrass.add("hola");
+		 palabrass.add("hola");
+		Optional<ArrayList> optional = Optional.ofNullable(null);
+//		Optional<ArrayList> optional = Optional.ofNullable(palabras);
 		// Aqui obtenemos el valor dado o uno por defecto
 		System.out.println(new OptionalProbe1400().probar(optional.orElse
-				(new ArrayList<String>())));
+		(palabrass)));
 
 	}
 
