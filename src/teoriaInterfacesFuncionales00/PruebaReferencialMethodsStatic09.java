@@ -2,6 +2,16 @@ package teoriaInterfacesFuncionales00;
 
 public class PruebaReferencialMethodsStatic09 {
 	public static void main(String[] args) {
+		Converter<Float, String> conv=new Converter<Float, String> () {
+
+			@Override
+			public Float convert(String f) {
+				return Float.valueOf(f);
+			}
+
+		
+		};
+		Converter<Float, String> conv2=(a)->{return Float.valueOf(a);};
 		//Podemos usar referencias directas a metodos estaticos
 		Converter<Float, String> converter=Float::valueOf;
 		Float convert = converter.convert("4");

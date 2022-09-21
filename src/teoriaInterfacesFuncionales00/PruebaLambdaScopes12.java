@@ -1,8 +1,12 @@
 package teoriaInterfacesFuncionales00;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class PruebaLambdaScopes12 {
     static int outerStaticNum;
     int outerNum;
+    int total=0;
 
     //Aqui podemos ver como el acceso a propiedades de una clase u objeto
     //esta completamente permitido, parece que ya no nos importa el efecto colateral
@@ -17,6 +21,12 @@ public class PruebaLambdaScopes12 {
             return String.valueOf(from);
             
         };
+      
+        List<Integer> asList = Arrays.asList(56,43,4,5,66);
+       
+        asList.forEach((a)->{
+        	total+=a;        	
+        });
     }
     public void probcc() {
     	this.outerStaticNum=0;

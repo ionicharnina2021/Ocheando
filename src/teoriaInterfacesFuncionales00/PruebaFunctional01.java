@@ -11,8 +11,8 @@ public class PruebaFunctional01 {
 			}
 		};
 		actionFunctional00.doit();
-		//Como hacemos esto con lambda
-		ActionFunctional00 other=()->{System.out.println("vengo de una lmbda");};
+//		//Como hacemos esto con lambda
+		ActionFunctional00 other=()->System.out.println("vengo de una lmbda");
 		other.doit();
 		
 	}

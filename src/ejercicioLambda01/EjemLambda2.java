@@ -56,18 +56,15 @@ public class EjemLambda2 extends JFrame {
 		
 		JButton btnSaluda = new JButton("saluda");
 	
-//		btnSaluda.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				lblSaluda.setText("Hola "+textField.getText());
-//				System.out.println(e.getSource().getClass());
-//			}
-//		});
-		btnSaluda.addActionListener(e->{
-			lblSaluda.setText("Hola "+textField.getText());
-			System.out.println(e.getSource().getClass());
+		btnSaluda.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				lblSaluda.setText("Hola "+textField.getText());
+				System.out.println(e.getSource().getClass());
+			}
 		});
+	
 				
 		btnSaluda.setBounds(228, 219, 115, 29);
 		contentPane.add(btnSaluda);

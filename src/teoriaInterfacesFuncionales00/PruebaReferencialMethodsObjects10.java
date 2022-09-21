@@ -10,7 +10,19 @@ public class PruebaReferencialMethodsObjects10 {
         String converted = converter.convert("Java");
         System.out.println(converted);    // "J"
         //Usando metodos de construccion
-        PersonFactory personFactory=Person::new;
+        PersonFactory<Person> mia=new PersonFactory() {
+
+			@Override
+			public Person create(String firstName) {
+				return new Person(firstName);
+			}
+		};
+		
+		PersonFactory<Person> milambda=(nombre)->{return new Person(nombre);};
+		
+        PersonFactory<Person> personFactory=Person::new;
+        PersonFactory<Client> clientFactory=Client::new;
+        
         Person person=personFactory.create("Obdulio");
         System.out.println(person.toString());
         //La sobercarga no es posible
@@ -18,6 +30,14 @@ public class PruebaReferencialMethodsObjects10 {
 //        System.out.println(person.toString());
     }
 
+}
+class Client extends Person{
+
+	public Client(String nombre) {
+		super(nombre);
+		// TODO Auto-generated constructor stub
+	}
+	
 }
 class Something {
     String startsWith(String s) {
