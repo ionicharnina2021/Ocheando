@@ -7,7 +7,7 @@ public class PruebaStringStream00 {
         //Supongamos que tenemos un String
         String cadena = new String("      Molto Cadencioso");
         //Podemos aplicar un metodo que trabaje sobre el y devuelva otro String
-        String cadena2 = cadena.toUpperCase();
+        String cadena2 = cadena.toUpperCase()+"otra cosa";
         System.out.println(cadena2);
         //Sobre esta cadena podemos aplicar otro metodo de String porque es el retorn de la anterior
         String cadena3 = cadena2.toLowerCase();

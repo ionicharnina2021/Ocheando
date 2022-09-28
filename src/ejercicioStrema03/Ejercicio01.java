@@ -13,14 +13,28 @@ public class Ejercicio01 {
 		// tres.
 		int maxim = 100;
 		ArrayList<Integer> list = new Ejercicio01().randomList(maxim);
+		// no stream
+		ArrayList<Integer> multiplos = new ArrayList<>();
+		for (int i = 0; i < list.size(); i++) {
+			//
+
+		}
+		for (Integer integer : list) {
+			if (integer % 3 == 0) {
+				multiplos.add(integer);
+			}
+		}
 		List<Integer> collect = list.stream().filter((a) -> {
 			return a % 3 == 0;
 		}).collect(Collectors.toList());
+
+////		https://www.baeldung.com/java-generate-random-long-float-integer-double
 		List<Integer> collect2 = new Random()
 				.ints(0,100)
 				.limit(20)
 				.sorted()
 				.boxed().collect(Collectors.toList());
+//		
 		
 	}
 
@@ -32,4 +46,5 @@ public class Ejercicio01 {
 		}
 		return list;
 	}
+
 }
