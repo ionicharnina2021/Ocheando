@@ -19,5 +19,9 @@ public static void main(String[] args) {
 	
 	//una lista de cinco o seis socios.
 	//haz reverse
+	List<Socio> socios = SociosOM.getSocios();
+	System.out.println(socios);
+	Collections.reverse(socios);
+	System.out.println(socios);
 }
 }

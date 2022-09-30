@@ -1,4 +1,4 @@
-package ejercicioStrema03;
+package ejerciciosStream04;
 
 public class Socio {
 	private String nombre;
@@ -26,8 +26,4 @@ public class Socio {
 		this.saldo = saldo;
 	}
 	
-	@Override
-	public String toString() {
-		return this.getNombre();
-	}
 }
