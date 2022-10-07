@@ -1,8 +1,22 @@
 package ejercicioStream07;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Ejercicio03 {
+	public void solucion(){
+//		new HashSet<Integer>(Arrays.asList(1,2,3,4,5,6,7))
+		new Random()
+		.ints(1, 8)
+		.limit(20)
+		.boxed()
+		.collect(Collectors.toSet())
+		.addAll(new Random()
+				.ints(1, 8)
+				.limit(20)
+				.boxed()
+				.collect(Collectors.toList()));
+	}
 	/*
 	 * Reglas de bolas de dos colores: cada apuesta en la bola de dos colores consta
 	 * de 6 números de bolas rojas y 1 número de bolas azules. El número de bola

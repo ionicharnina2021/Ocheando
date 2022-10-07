@@ -5,12 +5,11 @@ import java.util.List;
 import java.util.Random;
 
 public class GatoOM {
-	String[] cc = { "Pitín", " Wifi", " Flash", " Apolo", " Ratón", " Oreo", " Rayo", " Odín", " Max", " Poker", "Alan",
+	List<String> nombres = Arrays.asList("Pitín", " Wifi", " Flash", " Apolo", " Ratón", " Oreo", " Rayo", " Odín", " Max", " Poker", "Alan",
 			" Yael", " Otto", " Kuno", " Max", " Ian", " Kai", " Nic", " Roi", " Joe", " Vito", " Iker", "Orión",
 			" Leo", " Khan", " Rajin", " Jade", " Tabby", " Kin", " Elvis", " Baboo", " Nilo", "Ninja", " Batman",
 			" Night", " Dark", " Shadow", " Sauron", " Kuro", " Morito", " Tizón", " Salem", "Silver", " Bolín",
-			" Amaru", " Joel", " Luc", " Naim", " Teo", " Umi", " Dorian", " Adel" };
-	List<String> nombres = Arrays.asList(cc);
+			" Amaru", " Joel", " Luc", " Naim", " Teo", " Umi", " Dorian", " Adel" );
 
 	byte edadMaxima = 7;
 

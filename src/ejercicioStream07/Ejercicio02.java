@@ -1,9 +1,23 @@
 package ejercicioStream07;
 
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Ejercicio02 {
+	public void solucion() {
+//		Arrays.asList( "12345", "67891", "12347809933", "98765432102", "67891", "12347809933" )
+//		.stream()
+//		.collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+//		System.out.println();
+		Arrays.asList( "12345", "67891", "12347809933", "98765432102", "67891", "12347809933" )
+		.stream()
+		.distinct().collect(Collectors.toList());
+	}
 	/*
 	 * La matriz conocida almacena un lote de números QQ. El número QQ más largo es
 	 * de 11 dígitos y el más corto es de 5 dígitos String [] strs = {"12345",
@@ -14,7 +28,7 @@ public class Ejercicio02 {
 	 */
 	public static void main(String[] args) {
 		// método uno:
-		
+		new Ejercicio02().solucion();
 		String[] strs = { "12345", "67891", "12347809933", "98765432102", "67891", "12347809933" };
 		LinkedList<String> al = new LinkedList<String>();
 		for (int i = 0; i < strs.length; i++) {
