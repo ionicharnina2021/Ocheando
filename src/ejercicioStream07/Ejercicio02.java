@@ -14,6 +14,7 @@ public class Ejercicio02 {
 	 */
 	public static void main(String[] args) {
 		// método uno:
+		
 		String[] strs = { "12345", "67891", "12347809933", "98765432102", "67891", "12347809933" };
 		LinkedList<String> al = new LinkedList<String>();
 		for (int i = 0; i < strs.length; i++) {
