@@ -10,6 +10,7 @@ public class Ejercicio01 {
 	public static void main(String[] args) {
 		List<Integer> collect = new Random().ints(1, 100).limit(20).boxed().collect(Collectors.toList());
 		System.out.println(collect);
+		//esto asi no es
 		collect.stream().forEach((a) -> {
 			Ejercicio01.suma += a;
 		});

@@ -1,9 +1,22 @@
 package ejercicioStream07;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 public class Ejercicio01
 {
+	public List<Integer> solucion() {
+		return new Random()
+		.ints(1, 100)
+		.limit(20)
+		.boxed()
+		.filter((numero)->{return numero>10;})
+//		.forEach((filtrado)->{System.out.println(filtrado);});
+		.collect(Collectors.toList());
+	}
 //	1. Genere 10 números aleatorios que van del 1 al 100
 //	y colóquelos en una matriz Coloque los números mayores
 //	o iguales a 10 en la matriz 
