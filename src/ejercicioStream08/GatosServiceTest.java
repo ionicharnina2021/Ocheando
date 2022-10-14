@@ -2,6 +2,9 @@ package ejercicioStream08;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +19,9 @@ class GatosServiceTest {
 	@Test
 	void testAddOneThousandCats()  {
 		assertTrue(gatosService.addOneThousandCats());
+		Stream<Gato> stream = gatosService.getGatos().stream();
+		System.out.println();
+		
 	}
 	
 	@Test
